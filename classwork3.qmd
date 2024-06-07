@@ -18,6 +18,8 @@ library(primer.data)
 #| warning: false
 connectedness |> ggplot(mapping = aes(x = population, y = connectedness)) +
   geom_point() +
+  geom_smooth(method = lm) +
   scale_x_log10(labels = scales::comma_format()) +
-  labs(title = "Us County Populations Versus Economic Connectedness", subtitle = "There is no correlation between population and economic connectedness")
+  labs(title = "Us County Populations Versus Economic Connectedness", subtitle = "There is no correlation between population and economic connectedness", x = "Population", y = "Economic Connectiveness") +
+  scale_y_continuous(breaks = seq(2, 20, by = 1))
 ```
