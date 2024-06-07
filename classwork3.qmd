@@ -1,0 +1,23 @@
+---
+title: "classwork_3"
+author: "Hunter Stephens"
+format: html
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+library(tidyverse)
+library(primer.data)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+connectedness |> ggplot(mapping = aes(x = population, y = connectedness)) +
+  geom_point() +
+  scale_x_log10(labels = scales::comma_format()) +
+  labs(title = "Us County Populations Versus Economic Connectedness", subtitle = "There is no correlation between population and economic connectedness")
+```
